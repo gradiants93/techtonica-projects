@@ -18,3 +18,7 @@ p, h1, h2 {
 h1#recipe-title {
     font-size: 100px;
 }
+.left {
+    width: 600px;
+    float: left;
+}
