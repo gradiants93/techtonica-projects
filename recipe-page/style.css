@@ -33,3 +33,26 @@ h1#recipe-title {
     font-family: fantasy;
     color:maroon;
 }
+
+@media (max-width: 1320px) {
+    img {
+        width: fit-content;
+        position: relative;
+    }
+    .left {
+        width: fit-content;
+        float: none;
+    }
+    .right {
+        margin-left: 1px;
+        width: fit-content;
+        float: none;
+    }
+    .description {
+        width: fit-content;
+    }
+    h1#recipe-title {
+        font-size: 100px;
+    }
+}
+
