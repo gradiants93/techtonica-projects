@@ -5,7 +5,14 @@ const bodyNode = document.querySelector("body");
 button.onclick = function () {
     bodyNode.style.backgroundColor = "darkred";
     alert(" OW I SAID NO TOUCHIE");
-    
+    bodyNode.style.color = "white";
+    document.querySelector("h1").style.color = "white";
+    let h2s = document.querySelectorAll("h2");
+    h2s.forEach(node => node.style.color = "white");
+    let ps = document.querySelectorAll("p")
+    ps.forEach(nodes => nodes.style.color = "white");
+    let labels = document.querySelectorAll("label")
+    labels.forEach(nodes => nodes.style.color = "white");
 };
 let otherSection = document.getElementById("otherrecipes");
 otherSection.appendChild(button);
