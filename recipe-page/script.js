@@ -1,11 +1,20 @@
+// no touchie button
+let button = document.createElement("button");
+button.innerText = "No Touchie";
+button.onclick = function () {
+    alert(" OW I SAID NO TOUCHIE");
+};
+let otherSection = document.getElementById("otherrecipes");
+otherSection.appendChild(button);
 // checkboxes next to ingredients
 
-//collect list of list elements
-document.getElementsByClassName
-let listOfLi = document.getElementsByClassName("ingredient-list")[0].children;
+// collect list of list elements
+let ul = document.getElementById("ul-list");
+let listOfLi = ul.children;
 // collect text of element
 
 for (element in listOfLi) {
+    let targetNode = listOfLi[element];
     let text = listOfLi[element].innerHTML;
     let label = document.createElement("label")
     let checkBox = document.createElement("input");
@@ -13,9 +22,11 @@ for (element in listOfLi) {
     checkBox.setAttribute("name", `${element}checkbox`);
     label.setAttribute("for", `${element}checkbox`);
     label.innerHTML = text;
-    listOfLi[element].replaceChild(checkBox, listOfLi[element].childNodes[0])
-    listOfLi[element].appendChild(label);
-    
+    console.log(targetNode);
+    if (targetNode.childNodes) {
+        listOfLi[element].replaceChild(checkBox, targetNode.childNodes[0]);
+        listOfLi[element].appendChild(label);
+    }
 }
 
 
