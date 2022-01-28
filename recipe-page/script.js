@@ -1,8 +1,11 @@
 // no touchie button
 let button = document.createElement("button");
 button.innerText = "No Touchie";
+const bodyNode = document.querySelector("body");
 button.onclick = function () {
+    bodyNode.style.backgroundColor = "darkred";
     alert(" OW I SAID NO TOUCHIE");
+    
 };
 let otherSection = document.getElementById("otherrecipes");
 otherSection.appendChild(button);
