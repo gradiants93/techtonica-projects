@@ -12,6 +12,15 @@ p, h1, h2 {
     font-family: fantasy;
     color:maroon;
 }
+p {
+    font-size: 30px;
+}
+h1, h2 {
+    font-size: 40px;
+}
+.directions, .ingredient-list {
+    font-size: 30px;
+}
 .description {
     width: 600px;
 }
@@ -26,7 +35,7 @@ h1#recipe-title {
 .right {
     width: 600px;
     /* float: left; */
-    margin-left: 30px;
+    /* margin-left: 30px; */
 
 }
 .ingredient-list li label {
@@ -49,6 +58,7 @@ h1#recipe-title {
     }
     .description {
         width: fit-content;
+        font-size: 30px;
     }
     h1#recipe-title {
         font-size: 100px;
@@ -75,10 +85,13 @@ h1#recipe-title {
     }
 }
 
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 1200px) {
     img {
         width: 600px;
         position: relative;
+    }
+    .description{
+        width: 1200px;
     }
     .left {
         width: 600px;
