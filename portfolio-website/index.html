@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- Picture, text, form, media queries is the ENTIRE GOAL -->
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,21 +11,21 @@
 </head>
 <body>
     <header>
-        <h1>Eileen Long</h1>
-        <p>short description of your experience</p>
+        <h1 class="name">Eileen Long</h1>
+        <p class="description">short description of your experience</p>
     </header>
     <main>
-        <section>
-            <h2>About Me</h2>
-        </section>
-        <section>
-            <h2>Skills</h2>
-        </section>
-        <section>
-            <h2>Portfolio</h2>
-        </section>
-        <section>
-            <h2>Contact</h2>
+        <article>
+            <h2 class="subtitle">About Me</h2>
+        </article>
+        <article>
+            <h2 class="subtitle">Skills</h2>
+        </article>
+        <article>
+            <h2 class="subtitle">Portfolio</h2>
+        </article>
+        <article class="comment-form">
+            <h2 class="subtitle">Contact</h2>
             <form>
                 <section>
                     <label for="name">Name:<em>*</em></label>
@@ -36,7 +38,7 @@
                 <label for="message">Message:<em>*</em></label>
                 <textarea rows="2" cols="30" name="message" id="message" required></textarea>
             </form>
-        </section>
+        </article>
     </main>
     <script src="index.js"></script>
 </body>
