@@ -3,98 +3,98 @@
 **/
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+/**
+* ! style rules for form section
+**/
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 50px;
+}
+
+.text {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form div input {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  outline: none;
+  border: 2px solid #c4c4c4;
+  padding: 0 30px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style rules for submit btn */
+
+button {
+  margin-top: 15px;
+  width: 100%;
+  height: 45px;
+  background-color: rgb(82, 106, 66);
+  border: 2px solid rgb(82, 106, 66);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.1s ease;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+}
+
+/**
+* ! style rules for content section
+**/
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: rgb(82, 106, 66);
+  width: 55%;
+  min-height: 100vh;
+  padding: 10px 20px;
+}
+
+form {
+    width: 45%;
+    max-width: none;
+}
+@media screen and (max-width: 425px) {
+  img {
+    display: none;
   }
-  
-  body {
-    font-family: sans-serif;
-  }
-  
-  /**
-  * ! style rules for form section
-  **/
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 400px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 50px;
-  }
-  
-  .text {
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  form div input {
-    width: 100%;
-    height: 40px;
-    border-radius: 8px;
-    outline: none;
-    border: 2px solid #c4c4c4;
-    padding: 0 30px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Style rules for submit btn */
-  
-  button {
-    margin-top: 15px;
-    width: 100%;
-    height: 45px;
-    background-color: #79afcd;
-    border: 2px solid #79afcd;
-    border-radius: 8px;
-    color: #fff;
-    font-size: 20px;
-    cursor: pointer;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    transition: all 0.1s ease;
-  }
-  
+}
+@media screen and (min-width: 900px) {
   .container {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  /**
-  * ! style rules for content section
-  **/
-  
-  .content {
-    display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    background-color: #79afcd;
-    width: 55%;
-    min-height: 100vh;
-    padding: 10px 20px;
   }
-  
-  form {
-     width: 45%;
-     max-width: none;
+  form, .content {
+    width: 100%;
   }
-  @media screen and (max-width: 425px) {
-    .image {
-      display: none;
-    }
-  }
-  @media screen and (min-width: 900px) {
-    .container {
-      flex-direction: column;
-    }
-    form, .content {
-      width: 100%;
-    }
-  }
+}
