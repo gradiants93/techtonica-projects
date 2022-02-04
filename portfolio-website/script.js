@@ -1,37 +1,31 @@
-let bodyTag = document.querySelector("body");
 let button = document.getElementById("submit");
 let nameField = document.getElementById("name");
 let email = document.getElementById("email");
 let subject = document.getElementById("subject");
 let message = document.getElementById("message");
-// function takes two prompt user for two colors then checks if they are valid CSS colors. If not, pops an alert telling what was sent. If works, changes text and background colors.
 let nameText = "";
 let emailText = "";
 let subjectText = "";
 let messageText = "";
 
-// newBkgrd.addEventListener("input", e => {
-//   const inputValue = e.target.value;
-//   }
-// );
-// newFont.addEventListener
-nameField.addEventListener("blur", (e) => {
+nameField.addEventListener("input", (e) => {
     nameText = e.target.value;
 });
-email.addEventListener("blur", (e) => {
+email.addEventListener("input", (e) => {
     emailText = e.target.value;
 });
-subject.addEventListener("blur", (e) => {
+subject.addEventListener("input", (e) => {
     subjectText = e.target.value;
 });
-message.addEventListener("blur", (e) => {
+message.addEventListener("input", (e) => {
     messageText = e.target.value;
 });
 
 
 
 button.addEventListener("click", (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     console.log(nameText, emailText, subjectText, messageText);
+    return false;
   }
 );

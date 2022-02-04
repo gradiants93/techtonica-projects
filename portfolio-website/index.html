@@ -39,7 +39,7 @@
             </article>
             <article class="comment-form">
                 <h2 class="subtitle">Contact</h2>
-                <form>
+                <form onsubmit="return false;">
                     <section>
                         <label for="name">Name:<em>*</em></label>
                         <input type="text" name="name" id="name" required>
@@ -50,7 +50,7 @@
                     </section>
                     <label for="message">Message:<em>*</em></label>
                     <textarea rows="8" cols="60" name="message" id="message" required></textarea>
-                    <button type="submit" id="submit">Send</button>
+                    <button type="submit" id="submit">Submit</button>
                 </form>
             </article>
         </main>
