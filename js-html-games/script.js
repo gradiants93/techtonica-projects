@@ -43,6 +43,8 @@ button.addEventListener("click", (e) => {
         results.appendChild(tableRow);
         // console.log(coinNumber, coin);
     }
+    let resultsData = document.createElement("td");
+    let resultsRow = document.createElement("tr");
     resultsData.innerText = `You had ${numHeads} Heads and ${numTails} Tails out of ${numberOfCoins} coins`
     resultsRow.appendChild(resultsData);
     results.appendChild(resultsRow);
