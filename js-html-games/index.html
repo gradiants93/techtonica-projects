@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coin FLip!</title>
+    <title>Coin Flip!</title>
 </head>
 <body>
     <header>
@@ -14,7 +14,24 @@
         <summary>The aim of the game is to guess if the coin will land heads or tails side up.</summary>
     </header>
     <article>
-        
+        <div>
+            <p></p>
+            <table>
+                <section>
+                    <label for="numberOfCoins">How many coins do you want to flip? </label>
+                    <input type="text" id="numberOfCoins" name="numberOfCoins">
+                    <button type="submit" id="flipButton">Flip It!</button>
+                </section>
+                <section>
+                    <tr>
+                        <td><strong>RESULTS</strong></td>
+                    </tr>
+                    <tr id="results">
+                        <!-- results go here -->
+                    </tr>
+                </section>
+            </table>
+        </div>
     </article>
 </body>
 <script src="script.js"></script>
