@@ -7,22 +7,22 @@ const app = express();
 const port = 3000;
 
 let books = [{
-    isbn: '0-553-12044-1',
+    isbn: '0553120441',
     title: 'Dragonsong',
     author: 'McCaffrey, Anne',
     format: 'Paperback'
 }, {
-    isbn: '0-679-88917-5',
+    isbn: '0679889175',
     title: 'First Test',
     author: 'Pierce, Tamora',
     format: 'Paperback'
 }, {
-    isbn: '978-0-85766-0-28-2',
+    isbn: '9780857660282',
     title: 'Sixty-One Nails',
     author: 'Shevdon, Mike',
     format: 'Paperback'
 }, {
-    isbn: '0-553-09609-5',
+    isbn: '0553096095',
     title: 'The Diamond Age',
     author: 'Stephenson, Neal',
     format: 'Hardcover'
@@ -49,5 +49,19 @@ app.post('/book', (req, res) => {
 //get books
 app.get('/books', (req, res) => {
     res.json(books);
+});
+//get specific book
+app.get('/book/:isbn', (req, res) => {
+    // Reading isbn from the URL
+    const isbn = req.params.isbn;
+
+    for (let book of books) {
+        if (book.isbn === isbn) {
+            res.json(book);
+            return;
+        }
+    }
+    // Sending 404 when not found something is a good practice
+    res.status(404).send('Book not found');
 });
 app.listen(port, () => console.log(`Hello world app listening on port ${port}!`));
