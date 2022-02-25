@@ -37,6 +37,7 @@ app.use(bodyParser.json());
 app.get('/book', (req, res) => {
     res.sendFile(path.join(__dirname, '/new-book.html'));
 });
+
 //add book
 app.post('/book', (req, res) => {
     const book = req.body;
@@ -46,10 +47,12 @@ app.post('/book', (req, res) => {
 
     res.send('Book was added to database');
 });
+
 //get books
 app.get('/books', (req, res) => {
     res.json(books);
 });
+
 //get specific book
 app.get('/book/:isbn', (req, res) => {
     // Reading isbn from the URL
@@ -63,5 +66,20 @@ app.get('/book/:isbn', (req, res) => {
     }
     // Sending 404 when not found something is a good practice
     res.status(404).send('Book not found');
+});
+
+app.delete('/book/:isbn', (req, res) => {
+    // Reading isbn from the URL
+    const isbn = req.params.isbn;
+
+    // Remove item from the books array
+    books = books.filter(i => {
+        if (i.isbn !== isbn) {
+            return true;
+        }
+        return false;
+    });
+
+    res.send('Book is deleted');
 });
 app.listen(port, () => console.log(`Hello world app listening on port ${port}!`));
