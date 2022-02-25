@@ -5,7 +5,7 @@ const cors = require('cors');
 const app = express();
 const port = 3000;
 
-let books = [{}, {}, {}, {}, {}];
+let books = [];
 
 app.use(cors());
 
@@ -13,8 +13,14 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+//add book
 app.post('/book', (req, res) => {
-    // We will be coding here
+    const book = req.body;
+    //output to console
+    console.log(book);
+    books.push(book);
+
+    res.send('Book was added to database');
 });
 
 app.listen(port, () => console.log(`Hello world app listening on port ${port}!`));
