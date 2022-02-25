@@ -6,7 +6,27 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-let books = [{}, {}, {}, {}, {}];
+let books = [{
+    isbn: '0-553-12044-1',
+    title: 'Dragonsong',
+    author: 'Anne McCaffrey',
+    format: 'Paperback'
+}, {
+    isbn: '0-679-88917-5',
+    title: 'First Test',
+    author: 'Tamora Pierce',
+    format: 'Paperback'
+}, {
+    isbn: '978-0-85766-0-28-2',
+    title: 'Sixty-One Nails',
+    author: 'Mike Shevdon',
+    format: 'Paperback'
+}, {
+    isbn: '0-553-09609-5',
+    title: 'The Diamond Age',
+    author: 'Neal Stephenson',
+    format: 'Hardcover'
+}];
 
 app.use(cors());
 
