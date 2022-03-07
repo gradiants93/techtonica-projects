@@ -1,6 +1,7 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
-const port = process.env.port || 3001;
+const port = 5000;
 
 // Routes
 app.get("/api", (req, res) => {
