@@ -21,9 +21,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <h1>Hello from Techtonica (React-side)</h1>
-        <Child props={listOThings} />
+        <Child things={listOThings} />
         <p>{!data ? "Loading..." : data}</p>
       </header>
     </div>

@@ -3,7 +3,7 @@ function Child(props) {
     <div className="child">
       <h2>Hello from child (React-side)</h2>
       <ul>
-        {props.map((item, index) => (
+        {props.things.map((item, index) => (
           <li key={index}>
             Thing number {index} <img src={item} />{" "}
           </li>
