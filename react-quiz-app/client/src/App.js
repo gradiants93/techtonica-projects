@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Child from "./components/child";
+import Quiz from "./components/Quiz";
 
 function App() {
   const [data, setData] = useState(null);
@@ -23,8 +24,8 @@ function App() {
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <h1>Hello from Techtonica (React-side)</h1>
-        <Child things={listOThings} />
-        <p>{!data ? "Loading..." : data}</p>
+        {/* <Child things={listOThings} /> */}
+        <p>{!data ? "Loading..." : "Grabbed the questions"}</p>
       </header>
       {/* 
       connect api response to react (useEffect fetch /quiz)
