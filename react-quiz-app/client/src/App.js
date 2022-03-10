@@ -13,9 +13,9 @@ function App() {
   ];
 
   useEffect(() => {
-    fetch("/api")
+    fetch("/quiz")
       .then((response) => response.json())
-      .then((data) => setData(data.message));
+      .then((data) => setData(data[0]["question"]));
   }, []);
 
   return (
@@ -26,6 +26,18 @@ function App() {
         <Child things={listOThings} />
         <p>{!data ? "Loading..." : data}</p>
       </header>
+      {/* 
+      connect api response to react (useEffect fetch /quiz)
+      place into data/state variable
+      parent compenent -> quiz container
+      child component -> create a component to render each question as a <li>
+
+        <Parent passed apicallstuff as prop >
+        INSIDE parent component; call <Child individual question as props(correct and incorrect answers)>
+        INSIDE child component; Q.text as body text, map over incorrect answers and include correct answer (As button?)
+          onClick -> check if correct answer, return result
+
+      */}
     </div>
   );
 }
