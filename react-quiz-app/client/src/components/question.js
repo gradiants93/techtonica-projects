@@ -11,20 +11,26 @@
             onClick -> check if correct answer, return result
 */
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Question({ qtext, correct, incorrect }) {
-  const [rightAnswer, setRightAnswer] = useState(correct);
+  const [rightAnswer, setRightAnswer] = useState("");
+  const [selectedAnswer, setSelectedAnswer] = useState("");
+  useEffect(() => {
+    setRightAnswer({ correct });
+    console.log(`correct answer is ${correct}`);
+  }, []);
   let answerArray = [];
   answerArray.push(correct);
   answerArray.push(incorrect);
   const handleAnswer = (e) => {
     e.preventDefault();
-    if (e.target.value == rightAnswer) {
-      console.log(`Correct! The answer is ${e.target.value} ${correct}`);
+    setSelectedAnswer(e.target.value);
+    if (selectedAnswer == rightAnswer) {
+      console.log(`Correct! The answer is ${selectedAnswer} ${correct}`);
     } else {
       console.log(
-        `Try Again! You chose ${e.target.value}. Correct answer is ${correct}`
+        `Try Again! You chose ${selectedAnswer}. Correct answer is ${correct}`
       );
     }
   };

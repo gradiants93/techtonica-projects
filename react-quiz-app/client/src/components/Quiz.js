@@ -13,19 +13,19 @@ export default function Quiz({ listOfQuestions }) {
   return (
     <div className="Quiz-holder">
       <ul>
-        Testing
-        <Question
+        {/* <Question
           qtext={listOfQuestions[0].question}
           correct={listOfQuestions[0].correct_answer}
           incorrect={listOfQuestions[0].incorrect_answers}
-        />
-        {/* {listOfQuestions.map((singleQ) => (
+        /> */}
+        {listOfQuestions.map((singleQ, index) => (
           <Question
+            key={index}
             qtext={singleQ.question}
             correct={singleQ.correct_answer}
             incorrect={singleQ.incorrect_answers}
           />
-        ))} */}
+        ))}
       </ul>
     </div>
   );
