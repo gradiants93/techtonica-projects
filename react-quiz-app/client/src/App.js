@@ -13,7 +13,26 @@ function App() {
   //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY9E_Znn0e-lmRhLDIJIGd5OBJPoO4j4O4Gg&usqp=CAU",
   //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScSBHmVfixUedFLAWqqyRCVDQxyCjdLGRscg&usqp=CAU",
   // ];
-
+  const mockData = [
+    {
+      category: "Entertainment: Video Games",
+      type: "boolean",
+      difficulty: "easy",
+      question:
+        "The names of Tom Nook&#039;s cousins in the Animal Crossing franchise are named &quot;Timmy&quot; and &quot;Jimmy&quot;.",
+      correct_answer: "False",
+      incorrect_answers: ["True"],
+    },
+    {
+      category: "Entertainment: Video Games",
+      type: "boolean",
+      difficulty: "easy",
+      question:
+        "The PlayStation was originally a joint project between Sega and Sony that was a Sega Genesis with a disc drive.",
+      correct_answer: "False",
+      incorrect_answers: ["True"],
+    },
+  ];
   useEffect(() => {
     fetch("/quiz")
       .then((response) => response.json())
@@ -28,7 +47,7 @@ function App() {
         <h1>Hello from Techtonica (React-side)</h1>
         {/* <Child things={listOThings} /> */}
         <p>{!data ? "Loading..." : "Grabbed the questions"}</p>
-        <Quiz listOfQuestions={data} />
+        <Quiz listOfQuestions={mockData} />
       </header>
       {/* 
       connect api response to react (useEffect fetch /quiz)

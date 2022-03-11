@@ -8,12 +8,17 @@ INSIDE parent component; call <Child individual question as props(correct and in
 // holds all the things. breaks into many questions
 import Question from "./question";
 
-export default function Quiz(listOfQuestions) {
-  console.log(listOfQuestions);
+export default function Quiz({ listOfQuestions }) {
+  console.log(`${listOfQuestions}, ${listOfQuestions[0].question},`);
   return (
     <div className="Quiz-holder">
       <ul>
         Testing
+        <Question
+          qtext={listOfQuestions[0].question}
+          correct={listOfQuestions[0].correct_answer}
+          incorrect={listOfQuestions[0].incorrect_answers}
+        />
         {/* {listOfQuestions.map((singleQ) => (
           <Question
             qtext={singleQ.question}
