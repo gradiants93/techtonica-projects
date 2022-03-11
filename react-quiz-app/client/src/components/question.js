@@ -20,9 +20,8 @@ export default function Question({ qtext, correct, incorrect }) {
     setRightAnswer({ correct });
     console.log(`correct answer is ${correct}`);
   }, []);
-  let answerArray = [];
+  let answerArray = [...incorrect];
   answerArray.push(correct);
-  answerArray.push(incorrect);
   const handleAnswer = (e) => {
     e.preventDefault();
     setSelectedAnswer(e.target.value);
