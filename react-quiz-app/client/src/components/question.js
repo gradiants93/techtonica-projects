@@ -17,14 +17,37 @@ export default function Question({ qtext, correct, incorrect }) {
   const [rightAnswer, setRightAnswer] = useState("");
   const [selectedAnswer, setSelectedAnswer] = useState("");
   useEffect(() => {
-    setRightAnswer({ correct });
-    console.log(`correct answer is ${correct}`);
+    setRightAnswer(correct);
+    console.log(`correct answer is ${rightAnswer}`);
   }, []);
   let answerArray = [...incorrect];
   answerArray.push(correct);
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+
+      // swap elements array[i] and array[j]
+      // we use "destructuring assignment" syntax to achieve that
+      // you'll find more details about that syntax in later chapters
+      // same can be written as:
+      // let t = array[i]; array[i] = array[j]; array[j] = t
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+  shuffle(answerArray);
+
+  console.log(
+    `Placed last like original correct was ${
+      answerArray[answerArray.length - 1]
+    },  Actual correct ${correct}`
+  );
   const handleAnswer = (e) => {
     e.preventDefault();
-    setSelectedAnswer(e.target.value);
+    setSelectedAnswer(e.target.name);
+    console.log(e.target.innerHTML);
+    // setSelectedAnswer(buttonText);
+
+    console.log(selectedAnswer);
     if (selectedAnswer == rightAnswer) {
       console.log(`Correct! The answer is ${selectedAnswer} ${correct}`);
     } else {
@@ -38,7 +61,7 @@ export default function Question({ qtext, correct, incorrect }) {
     <>
       <li>{qtext}</li>
       {answerArray.map((answer, index) => (
-        <button key={index} onClick={handleAnswer}>
+        <button key={index} name={answer} onClick={handleAnswer}>
           {answer}
         </button>
       ))}
