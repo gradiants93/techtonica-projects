@@ -9,7 +9,7 @@ INSIDE parent component; call <Child individual question as props(correct and in
 import Question from "./question";
 
 export default function Quiz({ listOfQuestions }) {
-  console.log(`${listOfQuestions}, ${listOfQuestions[0].question},`);
+  //   console.log(`${listOfQuestions}, ${listOfQuestions[0].question},`);
   return (
     <div className="Quiz-holder">
       <ul>
