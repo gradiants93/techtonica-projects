@@ -1,22 +1,24 @@
 import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
-import Child from "./components/child";
+// import Child from "./components/child";
 import Quiz from "./components/Quiz";
+// import Question from "./components/question";
 
 function App() {
   const [data, setData] = useState(null);
-  let listOThings = [
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiHL6yeLk_5A-Bg6e3VT13iV-pu2q2FNFfMg&usqp=CAU",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI9OSnajRbit_IH4MgGbekLuLo9WosDf1qdA&usqp=CAU",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY9E_Znn0e-lmRhLDIJIGd5OBJPoO4j4O4Gg&usqp=CAU",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScSBHmVfixUedFLAWqqyRCVDQxyCjdLGRscg&usqp=CAU",
-  ];
+  // let listOThings = [
+  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiHL6yeLk_5A-Bg6e3VT13iV-pu2q2FNFfMg&usqp=CAU",
+  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI9OSnajRbit_IH4MgGbekLuLo9WosDf1qdA&usqp=CAU",
+  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY9E_Znn0e-lmRhLDIJIGd5OBJPoO4j4O4Gg&usqp=CAU",
+  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScSBHmVfixUedFLAWqqyRCVDQxyCjdLGRscg&usqp=CAU",
+  // ];
 
   useEffect(() => {
     fetch("/quiz")
       .then((response) => response.json())
-      .then((data) => setData(data[0]["question"]));
+      .then((data) => setData(data));
+    console.log(data);
   }, []);
 
   return (
@@ -26,6 +28,7 @@ function App() {
         <h1>Hello from Techtonica (React-side)</h1>
         {/* <Child things={listOThings} /> */}
         <p>{!data ? "Loading..." : "Grabbed the questions"}</p>
+        <Quiz listOfQuestions={data} />
       </header>
       {/* 
       connect api response to react (useEffect fetch /quiz)

@@ -11,6 +11,32 @@
             onClick -> check if correct answer, return result
 */
 
-export default function Question({ text, correct, incorrect }) {
-  return <>{apiQs.map}</>;
+import { useState } from "react";
+
+export default function Question({ qtext, correct, incorrect }) {
+  const [rightAnswer, setRightAnswer] = useState(correct);
+  let answerArray = [];
+  answerArray.push(correct);
+  answerArray.push(incorrect);
+  const handleAnswer = (e) => {
+    e.preventDefault();
+    if (e.target.value == rightAnswer) {
+      console.log(`Correct! The answer is ${e.target.value} ${correct}`);
+    } else {
+      console.log(
+        `Try Again! You chose ${e.target.value}. Correct answer is ${correct}`
+      );
+    }
+  };
+
+  return (
+    <>
+      <li>{qtext}</li>
+      {answerArray.map((answer, index) => (
+        <button key={index} onClick={handleAnswer}>
+          {answer}
+        </button>
+      ))}
+    </>
+  );
 }

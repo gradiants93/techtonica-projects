@@ -13,7 +13,7 @@ app.get("/quiz", async (req, res) => {
   let quizQs = await response.json();
   console.log(quizQs);
   res.json(quizQs.results);
-  return quizQs;
+  return quizQs.results;
 });
 
 // Make sure it's working terminal side
