@@ -9,7 +9,9 @@ app.get("/api", (req, res) => {
   res.json({ message: "Hello from Express!" });
 });
 app.get("/quiz", async (req, res) => {
-  let response = await fetch("https://opentdb.com/api.php?amount=10");
+  let response = await fetch(
+    "https://opentdb.com/api.php?amount=10&category=27"
+  );
   let quizQs = await response.json();
   console.log(quizQs);
   res.json(quizQs.results);

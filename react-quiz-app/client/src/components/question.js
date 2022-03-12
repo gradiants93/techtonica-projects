@@ -49,8 +49,10 @@ export default function Question({ qtext, correct, incorrect }) {
 
     console.log(selectedAnswer);
     if (selectedAnswer == rightAnswer) {
+      alert(`Correct! The answer is ${correct}`);
       console.log(`Correct! The answer is ${selectedAnswer} ${correct}`);
     } else {
+      alert(`Nope! The answer is ${correct}`);
       console.log(
         `Try Again! You chose ${selectedAnswer}. Correct answer is ${correct}`
       );
